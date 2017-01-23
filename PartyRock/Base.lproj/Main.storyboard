@@ -1,26 +1,145 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="PartyRock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainVC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChainsmokersLogo" translatesAutoresizingMaskIntoConstraints="NO" id="jdW-A6-FHG"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yg-h9-I3Z">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-Zf-zXa">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTm-as-RqW">
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Top Videos">
+                                                    <color key="titleColor" red="0.98533653846153846" green="0.0029060282888191805" blue="0.43823250506661471" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U6-K4-E8g">
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Top Videos">
+                                                    <color key="titleColor" red="0.61335620941002023" green="0.60412332317121176" blue="0.61822916666666661" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFh-aD-PGB">
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Top Videos">
+                                                    <color key="titleColor" red="0.61335620941002023" green="0.60412332317121176" blue="0.61822916666666661" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91099759615384612" green="0.91099759615384612" blue="0.91099759615384612" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pcl-Zf-zXa" firstAttribute="top" secondItem="8Yg-h9-I3Z" secondAttribute="top" constant="5" id="RtV-IC-qjK"/>
+                                    <constraint firstAttribute="height" constant="46" id="VVF-hf-vH6"/>
+                                    <constraint firstItem="pcl-Zf-zXa" firstAttribute="leading" secondItem="8Yg-h9-I3Z" secondAttribute="leading" constant="8" id="mvY-fY-ChW"/>
+                                    <constraint firstAttribute="bottom" secondItem="pcl-Zf-zXa" secondAttribute="bottom" constant="5" id="sIB-Zj-HF3"/>
+                                    <constraint firstAttribute="trailing" secondItem="pcl-Zf-zXa" secondAttribute="trailing" constant="8" id="wZK-M5-0QH"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="slX-7W-ks2">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicCell" rowHeight="91" id="Qo3-Ib-OF0" customClass="MusicCell" customModule="PartyRock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qo3-Ib-OF0" id="BaT-Bj-znf">
+                                            <frame key="frameInset" width="375" height="90.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChainsmokersLogo" translatesAutoresizingMaskIntoConstraints="NO" id="n1A-43-fhk">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="n1A-43-fhk" secondAttribute="height" multiplier="1:1" id="Vos-pi-sLc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLX-KJ-kCR">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="IoZ-iV-At1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="38"/>
+                                                    <color key="textColor" red="0.98533653850000003" green="0.0029060282889999999" blue="0.4382325051" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CLX-KJ-kCR" firstAttribute="leading" secondItem="n1A-43-fhk" secondAttribute="trailing" constant="10" id="5Ma-uk-IjW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n1A-43-fhk" secondAttribute="bottom" constant="3" id="DhF-hC-fcb"/>
+                                                <constraint firstItem="n1A-43-fhk" firstAttribute="leading" secondItem="BaT-Bj-znf" secondAttribute="leadingMargin" constant="3" id="GXG-vt-83e"/>
+                                                <constraint firstItem="n1A-43-fhk" firstAttribute="top" secondItem="BaT-Bj-znf" secondAttribute="topMargin" constant="3" id="QSG-Tq-fQm"/>
+                                                <constraint firstItem="CLX-KJ-kCR" firstAttribute="trailing" secondItem="BaT-Bj-znf" secondAttribute="trailingMargin" id="YCl-px-7Zk"/>
+                                                <constraint firstItem="CLX-KJ-kCR" firstAttribute="top" secondItem="BaT-Bj-znf" secondAttribute="topMargin" constant="15" id="wco-Og-1TG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="n1A-43-fhk" id="0gl-Kt-vPo"/>
+                                            <outlet property="videoTitle" destination="CLX-KJ-kCR" id="Txm-X2-G6L"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Yg-h9-I3Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Rs-fe-vLc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="slX-7W-ks2" secondAttribute="bottom" id="6lh-sp-rCR"/>
+                            <constraint firstItem="jdW-A6-FHG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BL2-bv-bYg"/>
+                            <constraint firstAttribute="trailing" secondItem="slX-7W-ks2" secondAttribute="trailing" id="KOD-R4-NWA"/>
+                            <constraint firstItem="slX-7W-ks2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L4p-6L-cPz"/>
+                            <constraint firstItem="slX-7W-ks2" firstAttribute="top" secondItem="8Yg-h9-I3Z" secondAttribute="bottom" id="NsD-6H-9gW"/>
+                            <constraint firstAttribute="trailing" secondItem="jdW-A6-FHG" secondAttribute="trailing" id="Si6-9r-9RD"/>
+                            <constraint firstItem="jdW-A6-FHG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V2N-dg-M0V"/>
+                            <constraint firstAttribute="trailing" secondItem="8Yg-h9-I3Z" secondAttribute="trailing" id="aIe-gt-h1w"/>
+                            <constraint firstItem="8Yg-h9-I3Z" firstAttribute="top" secondItem="jdW-A6-FHG" secondAttribute="bottom" constant="8" id="blG-Ij-bPl"/>
+                            <constraint firstItem="jdW-A6-FHG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mF4-vC-SbQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="slX-7W-ks2" id="eaL-jV-y0X"/>
+                        <segue destination="qp2-d2-hKk" kind="showDetail" identifier="ViewVC" id="Rkw-5s-pLd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="32.833583208395808"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oY1-6m-djZ">
+            <objects>
+                <viewController id="qp2-d2-hKk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fsk-V7-Hc9"/>
+                        <viewControllerLayoutGuide type="bottom" id="au8-Co-mpe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1B7-V2-kWE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCZ-io-Exl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="33"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ChainsmokersLogo" width="826" height="165"/>
+    </resources>
 </document>

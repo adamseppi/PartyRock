@@ -20,7 +20,21 @@ class MusicCell: UITableViewCell {
 
     func updateUI(burner: Burner) {
         videoTitle.text = burner.videoTitle
-        //videoPreviewImage =
+        
+        let url = URL(string: burner.imageURL)!
+        
+        DispatchQueue.global().async {
+            do{
+                let data = try Data(contentsOf: url)
+                DispatchQueue.global().sync {
+                    self.videoPreviewImage.image = UIImage(data: data)!
+                }
+            } catch {
+                //catch error
+            }
+        }
+        
+        
     }
 
 }
